@@ -14,9 +14,38 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  name     String
-  cpf      String @unique
-  email    String @unique
-  password String
+  id           Int               @id @default(autoincrement())
+  name         String
+  cpf          String            @unique
+  email        String            @unique
+  password     String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  restrictions UserRestriction[]
+}
+
+model News {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model FoodRestriction {
+  id          Int               @id @default(autoincrement())
+  name        String
+  description String
+  users       UserRestriction[]
+}
+
+model UserRestriction {
+  id                Int             @id @default(autoincrement())
+  user              User            @relation(fields: [userId], references: [id])
+  userId            Int
+  foodRestriction   FoodRestriction @relation(fields: [foodRestrictionId], references: [id])
+  foodRestrictionId Int
+  createdAt         DateTime
+  updateAt          DateTime
 }
