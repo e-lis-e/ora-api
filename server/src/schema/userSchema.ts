@@ -1,10 +1,21 @@
 import { z } from "zod";
 
-export const userSchema = z.object({
+ const restrictionEnum = z.enum([
+  "CELIACO",
+  "LACTOSE",
+  "DIABETES",
+  "HIPERTENSAO",
+  "VEGANO",
+  "VEGETARIANO",
+  "APLV",
+  "TIREOIDE",
+  "FRUTOS_DO_MAR",
+  "NOZES",
+ ]);
+
+ export const userSchema = z.object({
   name: z.string(),
-  cpf: z.string(),
-  password: z.string().min(8, {
-    message: "A senha precisa ter pelo menos 8 dígitos",
-  }),
   email: z.string().email(),
+  password: z.string().min(6),
+  restrictions: z.array(restrictionEnum),
 });

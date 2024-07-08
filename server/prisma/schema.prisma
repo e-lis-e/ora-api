@@ -1,0 +1,68 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  name            String
+  email           String            @unique
+  password        String
+  UserRestriction UserRestriction[]
+}
+
+model Restriction {
+  id                 Int                  @id @default(autoincrement())
+  type               String               @unique
+  UserRestriction    UserRestriction[]
+  NewsRestriction    NewsRestriction[]
+  ServiceRestriction ServiceRestriction[]
+}
+
+model UserRestriction {
+  id            Int         @id @default(autoincrement())
+  userId        Int
+  restrictionId Int
+  user          User        @relation(fields: [userId], references: [id])
+  restriction   Restriction @relation(fields: [restrictionId], references: [id])
+
+  @@unique([userId, restrictionId])
+}
+
+model News {
+  id              Int               @id @default(autoincrement())
+  title           String
+  content         String
+  NewsRestriction NewsRestriction[]
+}
+
+model NewsRestriction {
+  id            Int         @id @default(autoincrement())
+  newsId        Int
+  restrictionId Int
+  news          News        @relation(fields: [newsId], references: [id])
+  restriction   Restriction @relation(fields: [restrictionId], references: [id])
+
+  @@unique([newsId, restrictionId])
+}
+
+model Service {
+  id                 Int                  @id @default(autoincrement())
+  name               String
+  description        String
+  ServiceRestriction ServiceRestriction[]
+}
+
+model ServiceRestriction {
+  id            Int         @id @default(autoincrement())
+  serviceId     Int
+  restrictionId Int
+  service       Service     @relation(fields: [serviceId], references: [id])
+  restriction   Restriction @relation(fields: [restrictionId], references: [id])
+
+  @@unique([serviceId, restrictionId])
+}
