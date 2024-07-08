@@ -90,17 +90,32 @@ select{
 }
 
 .img{
-    background-color: aqua;
+   
     margin-top: 20px;
     width: 580px;
     height: 110px;
     margin-left: 60px;
     font-family: Arial, Helvetica, sans-serif;
     color: #B23F2C;
-    
 }
 
 h3{
     color: #000000;
     font-style: italic;
+}
+#iconsp{
+    position: relative;
+    margin-top: -15px;
+    top: -10%;
+    right: -358px;
+    transform: translateY(-50%);
+    background: url('search.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.pesquisa{
+ float:right;
+margin: -20px 150px 10px 60px;
 }
