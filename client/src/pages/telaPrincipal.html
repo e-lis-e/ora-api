@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="style.css"  href='https://fonts.googleapis.com/css?family=Montserrat'>
+    <link rel="stylesheet" href="style.css" href='https://fonts.googleapis.com/css?family=Montserrat'>
 
 
-<title>Tela Inicial</title>
+
+    <title>Tela Inicial</title>
 </head>
-<body >
+
+<body>
 
     <div class="Menu">
-        <div class = "img">
-        <img src="simbolo.png" style="float:left;width:140px;height:140px; border-radius: 50%; margin:10px;  ">
-         <br><br>
-        <h1 style=" margin-top: 10px; height:30px; margin-left: 20px"> Bem Vindo/a ao ORA!</h1>
-            <h3>Observatório de Restrigimento Alimentares!</h3>
-        </div>
-       
-        <div class = "pesquisa"> 
-        <input class ="login1"  type="text" placeholder="Pesquisar">
-        <div id="iconsp"></div>
+        <div class="img">
+            <img src="simbolo.png" style="float:left;width:140px;height:140px; border-radius: 50%; margin:10px;  ">
             <br><br>
-        </div>   
+            <h1 style=" margin-top: 10px; height:30px; margin-left: 20px"> Bem Vindo/a ao ORA!</h1>
+            <h3>Observatório de Restrições Alimentares!</h3>
+        </div>
 
-       <div class ="usuario"> 
-        <div id="iconsU"></div>
+        <div class="pesquisa">
+            <input class="login1" type="text" placeholder="Pesquisar">
+            <div id="iconsp"></div>
+            <br><br>
+        </div>
+
+        <div class="usuario">
+            <div id="iconsU"></div>
         </div>
 
         <div class="filtro">
-        <h2>Pesquisar por Restrição:</h2>
-            <button img=""></button>
+            <h2>Pesquisar por Restrição:</h2>
+            <div class="botoes-filtro">
+                <button class="botao"><img src="celiaca.png" alt="Celíaca"
+                        style="width:50px;height:50px;"><br>Celíaca</button>
+                <button class="botao"><img src="lactose.png" alt="Lactose"
+                        style="width:50px;height:50px;"><br>Lactose</button>
+                <button class="botao"><img src="diabetes.png" alt="Diabetes"
+                        style="width:50px;height:50px;"><br>Diabetes</button>
+                <button class="botao"><img src="hipertensao.png" alt="Hipertensão"
+                        style="width:50px;height:50px;"><br>Hipertensão</button>
+                <button class="botao"><img src="tireoide.png" alt="Tireóide"
+                        style="width:50px;height:50px;"><br>Tireóide</button>
+                <button class="botao"><img src="alergico.png" alt="Alérgico"
+                        style="width:50px;height:50px;"><br>Alérgico</button>
+                <button class="botao"><img src="aplv.png" alt="APLV" style="width:50px;height:50px;"><br>APLV</button>
+                <button class="botao"><img src="outros.png" alt="Outros"
+                        style="width:50px;height:50px;"><br>Outros</button>
+            </div>
+        </div>
+        <div class="infos">
+            <div class="servicos">
+                <h3>Serviços em Destaque:</h3>
+                <div class="servico1"></div>
+                <div class="servico2"></div>
+                <div class="servico3"></div>
+            </div>
+            <div class="noticias">
+                <h3>Notícias em Destaque:</h3>
+                <div class="noticia1"></div>
+                <div class="noticia2"></div>
+                <div class="noticia3"></div>
+            </div>
         </div>
         
         <div class="carousel">
@@ -55,6 +88,7 @@
                 
 
     </div>
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
